@@ -19,7 +19,7 @@
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="">About</a></li>
                 <li><a href="">Projects</a></li>
-                <li><a href="{% url 'allskills' %}">Skills</a></li>
+                <li><a href="">Skills</a></li>
                 <li><a href="">Contact Me</a></li>
             </ul>
         </div>
@@ -69,7 +69,19 @@
     <!-- trinadh Contact starts -->
     <section class="contact section-start">
         {% block form %}
-
+        <section class="skills">
+            <div class="title">
+                <h2>My Skills</h2>
+            </div>
+        <ul>
+        {% for skill in skills %}
+        <li>
+            <h1><a href="">{{skill.skillname|upper}}</a></h1>
+            <!--<img src="{% static 'skillimages/'|add:skill.skillimage %}" alt="No Preview">-->
+        </li>
+        {% endfor %}
+        </ul>
+        </section>
         {% endblock form %}
     </section>
     <!-- trinadh Contact ends -->

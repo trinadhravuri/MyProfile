@@ -154,7 +154,5 @@ all_projects = [
     
 ]
 def home(request):
-    return render(request,'myprofile/home.html')
+    return render(request,'myprofile/home.html',{'skills':all_skills})
 
-def my_skills(request):
-    return render(request,'myprofile/all-skills.html',{'skills':all_skills})

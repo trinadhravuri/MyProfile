@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', sans-serif;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in;
+}
+.header{
+    position: fixed;
+    width: 100%;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    background: gray;
+    color: white;
+    z-index: 99;
+}
+.header .pic-name{
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+.header .pic-name h1:hover{
+    color: black;
+    letter-spacing: 2px;
+}
+.header img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.navi ul{
+    display: flex;
+    align-items: center;
+}
+.navi ul li{
+    list-style: none;
+    padding: 5px;
+}
+.navi ul li a{
+    text-decoration: none;
+    padding: 5px;
+    color: white;
+}
+.navi ul li a:active,
+.navi ul li a:hover{
+    color: black;
+    font-size: 20px;
+}
+a .btn{
+    position: relative;
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+a .btn:active,
+a .btn:hover{
+    background-color: grey;
+    color: white;
+}
+/* section end */
+.section-start{
+    position: relative;
+    top: 60px;
+}
+/* intro */
+.intro{
+    display: flex;
+    justify-content: space-around;
+    top: 90px;
+}
+.intro .matter .hello{
+    font-size: 90px;
+    font-family:'Trebuchet MS', sans-serif;
+}
+.intro .matter .name{
+    font-size: 90px;
+    font-family: Verdana, sans-serif;
+}
+.intro .matter .prof{
+    font-size: 90px;
+    font-family: 'Segoe UI',Geneva, sans-serif;
+}
+.intro .matter h3,h4{
+    font-size: 30px;
+}

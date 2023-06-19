@@ -1,0 +1,39 @@
+.skills{
+    margin: 10px;
+    padding: 10px;
+    font-family: 'Lucida Sans', sans-serif;
+}
+.skills .title{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+.skills ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 60px;
+    padding: 60px;
+    justify-content: space-around;
+}
+.skills ul li{
+    list-style: none;
+    margin: 10px;
+    padding: 10px;
+    border: 0.2px solid grey;
+}
+.skills ul li a{
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+}
+.skills ul li:active,
+.skills ul li:hover{
+    border: none;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 5px;
+    color: white;
+}
+.skills ul li:hover a{
+    color: white;
+}

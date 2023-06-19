@@ -1,39 +1,41 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
     <title>Trinadh Ravuri</title>
 </head>
 <body>
     <!-- Header section start -->
     <section class="header">
         <div class="pic-name">
-            <img src="" alt="">
+            <img src="{% static 'images/profile.jpg' %}" alt="">
             <h1><span>T</span>rinadh <span>R</span>avuri</h1>
         </div>
         <div class="navi">
             <ul>
-                <li><a href="">Home</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="">About</a></li>
                 <li><a href="">Projects</a></li>
-                <li><a href="">Skills</a></li>
+                <li><a href="{% url 'allskills' %}">Skills</a></li>
                 <li><a href="">Contact Me</a></li>
             </ul>
         </div>
     </section>
     <!-- Header section end -->
     <!-- trinadh Intro starts -->
-    <section class="intro">
+    <section class="intro section-start">
         <div>
-            <img src="" alt="">
+            <img src="{% static 'images/webprofile.png' %}" alt="">
         </div>
-        <div>
-            <h2>Hello.!</h2>
+        <div class="matter">
+            <h2 class="hello">Hello.!</h2>
             <h3>My name is</h3>
-            <h1>Trinadh Ravuri</h1>
+            <h1 class="name">Trinadh Ravuri</h1>
             <h4>I am</h4>
-            <h2>IT Professional</h2>
+            <h2 class="prof">IT Professional</h2>
             <a href=""><button class="btn">Call Me</button></a>
             <a href=""><button class="btn">Email me</button></a>
             <a href=""><button class="btn">Dounload Resume</button></a>
@@ -41,9 +43,10 @@
     </section>
     <!-- trinadh Intro starts -->
     <!-- trinadh About starts -->
-    <section>
+    <section class="about section-start">
+        <section class="title">About Me</section>
         <div class="education">
-
+            
         </div>
         <div class="hobbies">
 
@@ -51,35 +54,37 @@
     </section>
     <!-- trinadh About ends -->
     <!-- trinadh Projects starts -->
-    <section class="projects">
+    <section class="projects section-start">
         {% block projects %}
         {% endblock projects %}
     </section>
     <!-- trinadh Projects ends -->
     <!-- trinadh Skills starts -->
-    <section class="skills">
+    <section class="skills section-start">
         {% block skills %}
-        {% endblock skills %}
+        
+        {% endblock %}
     </section>
     <!-- trinadh Skills ends -->
     <!-- trinadh Contact starts -->
-    <section class="contact">
+    <section class="contact section-start">
         {% block form %}
+
         {% endblock form %}
     </section>
     <!-- trinadh Contact ends -->
     <!-- trinadh footer starts -->
-    <section class="footer">
-        <div>
+    <section class="footer section-start">
+        <div class="address"> 
             <h1>Address</h1>
         </div>
-        <div>
+        <div class="social">
             <h2>Facebook</h2>
             <h2>Twitter</h2>
             <h2>Linkedin</h2>
             <h2>Git Hub</h2>
         </div>
-        <div>
+        <div class="contact-footer">
             <h2>Email</h2>
             <h2>Mobile</h2>
         </div>

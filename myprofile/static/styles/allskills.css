@@ -1,0 +1,27 @@
+.allskill ul{
+    position: relative;
+    margin: 100px;
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    list-style: none;
+}
+.allskill img{
+    height: 200px;
+    width: 300px;
+}
+.allskill ul li{
+    width: 300px;
+    height: 300px;
+}
+.allskill ul li:active,
+.allskill ul li:hover{
+    color: grey;
+}
+.allskill ul li:active,
+.allskill ul li:hover img{
+    filter: invert(100%);
+}

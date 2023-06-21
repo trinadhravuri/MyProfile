@@ -1,0 +1,34 @@
+.footer{
+    position: relative;
+    display:flex;
+    justify-content: space-around;
+}
+
+.footer ul li{
+    list-style: none;
+    padding: 10px;
+}
+.footer .social-link ul{
+    text-align: center;
+    display: flex;
+}
+.footer .social-link ul li{
+    font-size: 40px;
+    padding: 20px;
+}
+.footer .social-link ul li a{
+    color: black;
+}
+.footer .social-link ul li a:active,
+.footer .social-link ul li a:hover{
+    color: crimson;
+    transition: all 0.1 ease-out;
+    font-size: 42px;
+}
+
+.contact-me li a{
+    color: black;
+}
+.contact-me li a .icon{
+    font-size: 50px;
+}

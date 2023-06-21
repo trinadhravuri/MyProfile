@@ -1,0 +1,16 @@
+{% extends 'myprofile/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/allskills.css'%}">
+<section class="allskill">
+    <ul>
+        {% for skill in skills %}
+        <li><a href="">
+        <img src="{% static 'skillimages/'|add:skill.skillimage %}" alt=""></a>
+        <h2>{{skill.skillname}}</h2>
+        <h3>{{skill.skillcontent}}</h3>
+        
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

@@ -1,52 +1,51 @@
-<!DOCTYPE html>
+{% extends 'myprofile/base.html'%}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
-    <title>Trinadh Ravuri</title>
-</head>
-<body>
-    <!-- Header section start -->
-    <section class="header">
-        <div class="pic-name">
-            <img src="{% static 'images/profile.jpg' %}" alt="">
-            <h1><span>T</span>rinadh <span>R</span>avuri</h1>
-        </div>
-        <div class="navi">
-            <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Projects</a></li>
-                <li><a href="">Skills</a></li>
-                <li><a href="">Contact Me</a></li>
-            </ul>
-        </div>
-    </section>
-    <!-- Header section end -->
-    <!-- trinadh Intro starts -->
-    <section class="intro section-start">
-        <div>
-            <img src="{% static 'images/webprofile.png' %}" alt="">
-        </div>
-        <div class="matter">
-            <h2 class="hello">Hello.!</h2>
-            <h3>My name is</h3>
-            <h1 class="name">Trinadh Ravuri</h1>
-            <h4>I am</h4>
-            <h2 class="prof">IT Professional</h2>
-            <a href=""><button class="btn">Call Me</button></a>
-            <a href=""><button class="btn">Email me</button></a>
-            <a href=""><button class="btn">Dounload Resume</button></a>
-        </div>
-    </section>
-    <!-- trinadh Intro starts -->
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/home.css' %}">
+
     <!-- trinadh About starts -->
     <section class="about section-start">
         <section class="title">About Me</section>
+        <div class="myself">
+            <p>Hi..!, Myself <b>Trinadh Ravuri</b>.</p>
+            <p>I am a PYTHON DEVELOPER</p>
+            <p>Yet, iam working as an AUTOMATION TEST ENGINEER</p>
+            <p>I have total of 7+ years of working Experience as</p>
+            <ul>
+                <li><a href="">AUTOMATION TEST ENGINEER</a></li>
+                <li><a href="">MANUAL TESTER</a></li>
+                <li><a href="">SYSTEM ADMINISTRATOR</a></li>
+            </ul>
+            <p>I am very much interested in Development in Python</p>
+        </div>
         <div class="education">
-            
+            <div class="title">My Education</div>
+            <ul>
+                <li>
+                    <h2>Time</h2>
+                    <h3>10 Th</h3>
+                    <h4>Surya Residential School</h4>
+                    <p>content</p>
+                </li>
+                <li>
+                    <h2>Time</h2>
+                    <h3>Intermediate</h3>
+                    <h4>Sarada junior College</h4>
+                    <p>content</p>
+                </li>
+                <li>
+                    <h2>Time</h2>
+                    <h3>B.sc(Electronics)</h3>
+                    <h4>S S S & N College, Narasaraopet</h4>
+                    <p>content</p>
+                </li>
+                <li>
+                    <h2>Time</h2>
+                    <h3>M.C.A</h3>
+                    <h4>Holy Mary, Hyderabad</h4>
+                    <p>content</p>
+                </li>
+            </ul>
         </div>
         <div class="hobbies">
 
@@ -56,51 +55,42 @@
     <!-- trinadh Projects starts -->
     <section class="projects section-start">
         {% block projects %}
+        <section class="projects">
+            <div class="title">
+                <h2><a href="" title="click here for ALL PROJECTS">My Projects</a></h2>
+            </div>
+            <ul>
+                {% for project in projects %}
+                <li><a href="">{{ project.projectname|upper }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
         {% endblock projects %}
     </section>
     <!-- trinadh Projects ends -->
     <!-- trinadh Skills starts -->
     <section class="skills section-start">
         {% block skills %}
-        
-        {% endblock %}
-    </section>
-    <!-- trinadh Skills ends -->
-    <!-- trinadh Contact starts -->
-    <section class="contact section-start">
-        {% block form %}
         <section class="skills">
             <div class="title">
-                <h2>My Skills</h2>
+                <h2><a href="" title="ALL SKILLS">My Skills</a></h2>
             </div>
         <ul>
         {% for skill in skills %}
         <li>
             <h1><a href="">{{skill.skillname|upper}}</a></h1>
-            <!--<img src="{% static 'skillimages/'|add:skill.skillimage %}" alt="No Preview">-->
         </li>
         {% endfor %}
         </ul>
         </section>
+        {% endblock skills %}
+    </section>
+    <!-- trinadh Skills ends -->
+    <!-- trinadh Contact starts -->
+    <section class="contact section-start">
+        {% block form %}
+        
         {% endblock form %}
     </section>
     <!-- trinadh Contact ends -->
-    <!-- trinadh footer starts -->
-    <section class="footer section-start">
-        <div class="address"> 
-            <h1>Address</h1>
-        </div>
-        <div class="social">
-            <h2>Facebook</h2>
-            <h2>Twitter</h2>
-            <h2>Linkedin</h2>
-            <h2>Git Hub</h2>
-        </div>
-        <div class="contact-footer">
-            <h2>Email</h2>
-            <h2>Mobile</h2>
-        </div>
-    </section>
-    <!-- trinadh footer ends -->
-</body>
-</html>
+{% endblock %}

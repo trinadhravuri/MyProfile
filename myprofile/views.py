@@ -5,7 +5,7 @@ all_skills = [
     {
         'skillname':'Python',
         'skillid':0,
-        'skillimage':'py.jpeg',
+        'skillimage':'py.png',
         'skillcontent':'',
         'skillability':75,
         'skilldescription':'''
@@ -15,7 +15,7 @@ all_skills = [
     {
         'skillname':'Django',
         'skillid':1,
-        'skillimage':'django.jpeg',
+        'skillimage':'django1.png',
         'skillcontent':'',
         'skillability':75,
         'skilldescription':'''
@@ -25,7 +25,7 @@ all_skills = [
     {
         'skillname':'pandas',
         'skillid':2,
-        'skillimage':'pandas.jpeg',
+        'skillimage':'pandas1.png',
         'skillcontent':'',
         'skillability':75,
         'skilldescription':'''
@@ -35,7 +35,7 @@ all_skills = [
     {
         'skillname':'flask',
         'skillid':3,
-        'skillimage':'flask.png',
+        'skillimage':'flask1.png',
         'skillcontent':'',
         'skillability':75,
         'skilldescription':'''
@@ -45,7 +45,7 @@ all_skills = [
     {
         'skillname':'Automation Testing',
         'skillid':4,
-        'skillimage':'testing.jpeg',
+        'skillimage':'auto1.jpg',
         'skillcontent':'',
         'skillability':75,
         'skilldescription':'''
@@ -55,7 +55,7 @@ all_skills = [
     {
         'skillname':'Full Stack Dev',
         'skillid':5,
-        'skillimage':'fs.png',
+        'skillimage':'fs2.jpg',
         'skillcontent':'',
         'skillability':75,
         'skilldescription':'''
@@ -65,7 +65,7 @@ all_skills = [
     {
         'skillname':'Network Security',
         'skillid':6,
-        'skillimage':'ns.jpeg',
+        'skillimage':'ns.jpg',
         'skillcontent':'',
         'skillability':75,
         'skilldescription':'''
@@ -154,5 +154,24 @@ all_projects = [
     
 ]
 def home(request):
-    return render(request,'myprofile/home.html',{'skills':all_skills})
+    context ={
+        'skills':all_skills[:4],
+        'projects':all_projects[:3]
+        }
+    return render(request,'myprofile/home.html',context)
+
+def base(request):
+    return render(request,'myprofile/base.html')
+
+def allskills(request):
+    context ={
+        'skills':all_skills,
+    }
+    return render(request,'myprofile/allskills.html',context)
+
+def allprojects(request):
+    context = {
+        'projects':all_projects,
+    }
+    return render(request,'myprofile/allprojects.html',context)
 

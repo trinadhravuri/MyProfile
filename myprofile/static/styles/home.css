@@ -68,7 +68,7 @@ a .btn:hover{
 /* section end */
 .section-start{
     position: relative;
-    top: 60px;
+    top: 40px;
 }
 /* intro */
 .intro{
@@ -91,6 +91,55 @@ a .btn:hover{
 .intro .matter h3,h4{
     font-size: 30px;
 }
+/* about section */
+.about{
+    margin: 10px;
+    padding: 10px;
+}
+.about .title{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+.about .myself{
+    text-align: center;
+    line-height: 2;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+.about .myself li{
+    list-style: none;
+}
+.about .myself li a{
+    text-decoration: none;
+    color: black;
+    text-decoration: underline;
+}
+.about .myself li a:hover,
+.about .myself li a:active{
+    letter-spacing: 3px;
+}
+.about .education ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+.about .education ul li{
+    list-style: none;
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    text-align: center;
+    justify-content: space-around;
+}
+.about .education .title{
+    font-weight: bold;
+}
 /* skills */
 .skills{
     margin: 10px;
@@ -101,7 +150,13 @@ a .btn:hover{
     text-align: center;
     font-size: 30px;
     margin-bottom: 30px;
-    margin-top: 40px;
+}
+.skills .title a{
+    text-decoration: none;
+    color: black;
+}
+.skills .title a:hover{
+    color: grey;
 }
 .skills ul{
     display: flex;
@@ -131,3 +186,50 @@ a .btn:hover{
 .skills ul li:hover a{
     color: white;
 }
+/* projects */
+.projects{
+    margin: 10px;
+    padding: 10px;
+    font-family: 'Lucida Sans', sans-serif;
+}
+.projects .title{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+.projects .title a{
+    text-decoration: none;
+    color: black;
+}
+.projects .title a:hover{
+    color: grey;
+}
+.projects ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 60px;
+    padding: 60px;
+    justify-content: space-around;
+}
+.projects ul li{
+    list-style: none;
+    margin: 10px;
+    padding: 10px;
+    border: 0.2px solid grey;
+}
+.projects ul li a{
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+}
+.projects ul li:active,
+.projects ul li:hover{
+    border: none;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 5px;
+    color: white;
+}
+.projects ul li:hover a{
+    color: white;
+}
+/* footer */

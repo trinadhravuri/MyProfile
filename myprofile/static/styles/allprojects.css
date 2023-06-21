@@ -1,0 +1,32 @@
+.allprojects ul{
+    position: relative;
+    margin: 100px;
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    list-style: none;
+}
+.allprojects ul li{
+    list-style: none;
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    text-align: center;
+    justify-content: space-around;
+}
+.allprojects ul li a{
+    text-decoration: none;
+    color:black;
+    text-align: center;
+}
+.allprojects ul li h2{
+    padding: 10px;
+}
+.allprojects ul li h3{
+    padding: 5px;
+}

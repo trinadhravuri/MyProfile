@@ -1,6 +1,13 @@
 {% extends 'myprofile/base.html'%}
 {% load static %}
 {% block content %}
+<style>
+    .about{
+        position: relative;
+
+        width: 100%;
+    }
+</style>
 <link rel="stylesheet" href="{% static 'styles/home.css' %}">
 
     <!-- trinadh About starts -->
@@ -87,10 +94,53 @@
     </section>
     <!-- trinadh Skills ends -->
     <!-- trinadh Contact starts -->
-    <section class="contact section-start">
-        {% block form %}
-        
-        {% endblock form %}
+    {% block contact %}
+    <style>
+        .contact{
+            margin:30px;
+            padding: 30px;
+        }
+        .form-control{
+            text-align: center;
+            font-size: 23px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            width: 500px;
+        }
+        .entry-field{
+            text-align: center;
+            border: none;
+        }
+        .bttn{
+            text-align: center;
+            margin-left: 35%;
+            margin-top: 30px;
+            width: 200px;
+            height: 60px;
+            border-radius: 5px;
+            border: none;
+        }
+        .bttn:hover,
+        .bttn:active{
+            border: 1px solid grey;
+            background: grey;
+            color: white;
+        }
+        </style>
+    <section class="contact">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-control">
+                <label for="">{{field.label}}</label>
+            </div>
+            <div class="entry-field">
+                {{field}}
+            </div>
+            {% endfor %}
+            <button type="submit" class="bttn">SEND</button>
+        </form>
     </section>
+    {% endblock contact %}
     <!-- trinadh Contact ends -->
 {% endblock %}

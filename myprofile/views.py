@@ -1,5 +1,7 @@
-from django.shortcuts import render
-
+from django.shortcuts import render,redirect
+from .models import Enquiry
+from .forms import EnquiryForm
+from django.http import HttpResponseRedirect
 # Create your views here.
 all_skills = [
     {
@@ -12,10 +14,40 @@ all_skills = [
         
         ''',
     },
+        {
+        'skillname':'Automation Testing',
+        'skillid':1,
+        'skillimage':'auto1.jpg',
+        'skillcontent':'',
+        'skillability':75,
+        'skilldescription':'''
+        
+        ''',
+    },
     {
         'skillname':'Django',
-        'skillid':1,
+        'skillid':2,
         'skillimage':'django1.png',
+        'skillcontent':'',
+        'skillability':75,
+        'skilldescription':'''
+        
+        ''',
+    },
+        {
+        'skillname':'Full Stack Dev',
+        'skillid':3,
+        'skillimage':'fs2.jpg',
+        'skillcontent':'',
+        'skillability':75,
+        'skilldescription':'''
+        
+        ''',
+    },
+      {
+        'skillname':'REST API',
+        'skillid':4,
+        'skillimage':'ns.jpg',
         'skillcontent':'',
         'skillability':75,
         'skilldescription':'''
@@ -24,7 +56,7 @@ all_skills = [
     },
     {
         'skillname':'pandas',
-        'skillid':2,
+        'skillid':5,
         'skillimage':'pandas1.png',
         'skillcontent':'',
         'skillability':75,
@@ -34,7 +66,7 @@ all_skills = [
     },
     {
         'skillname':'flask',
-        'skillid':3,
+        'skillid':6,
         'skillimage':'flask1.png',
         'skillcontent':'',
         'skillability':75,
@@ -43,28 +75,38 @@ all_skills = [
         ''',
     },
     {
-        'skillname':'Automation Testing',
-        'skillid':4,
-        'skillimage':'auto1.jpg',
-        'skillcontent':'',
-        'skillability':75,
-        'skilldescription':'''
-        
-        ''',
-    },
-    {
-        'skillname':'Full Stack Dev',
-        'skillid':5,
-        'skillimage':'fs2.jpg',
-        'skillcontent':'',
-        'skillability':75,
-        'skilldescription':'''
-        
-        ''',
-    },
-    {
         'skillname':'Network Security',
-        'skillid':6,
+        'skillid':7,
+        'skillimage':'ns.jpg',
+        'skillcontent':'',
+        'skillability':75,
+        'skilldescription':'''
+        
+        ''',
+    },
+      {
+        'skillname':'HTML',
+        'skillid':8,
+        'skillimage':'ns.jpg',
+        'skillcontent':'',
+        'skillability':75,
+        'skilldescription':'''
+        
+        ''',
+    },
+      {
+        'skillname':'C S S',
+        'skillid':9,
+        'skillimage':'ns.jpg',
+        'skillcontent':'',
+        'skillability':75,
+        'skilldescription':'''
+        
+        ''',
+    },
+      {
+        'skillname':'JavaScript',
+        'skillid':10,
         'skillimage':'ns.jpg',
         'skillcontent':'',
         'skillability':75,
@@ -74,17 +116,6 @@ all_skills = [
     },
 ]
 all_projects = [
-     {
-        'projectname':'Freelancing',
-        'projectid':0,
-        'projectimage':'freelance.png',
-        'projectsummary':'Freelancing giving the time to practice more and gain knowledge as well',
-        'Teamsize':5,
-        'period':'present',
-        'Roles':'''
-        
-        ''',
-    },
      {
         'projectname':'InFlight Entertainment System',
         'projectid':1,
@@ -154,9 +185,16 @@ all_projects = [
     
 ]
 def home(request):
+    form = EnquiryForm
+    if request.method == 'POST':
+        form = EnquiryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(home)
     context ={
         'skills':all_skills[:4],
-        'projects':all_projects[:3]
+        'projects':all_projects[:3],
+        'form':form
         }
     return render(request,'myprofile/home.html',context)
 
@@ -175,3 +213,14 @@ def allprojects(request):
     }
     return render(request,'myprofile/allprojects.html',context)
 
+def enquiryform(request):
+    form = EnquiryForm()
+    if request.method == 'POST':
+        form = EnquiryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(home)
+    context = {
+        'form':form
+    }
+    return render(request,'myprofile/includes/enquiry.html',context)

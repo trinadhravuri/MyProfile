@@ -19,6 +19,10 @@
 }
 .allskill ul li:active,
 .allskill ul li:hover{
+    box-shadow: 0 0 16px 6px rgba(0,0,0,0.3);
+}
+.allskill ul li:active,
+.allskill ul li:hover{
     color: grey;
 }
 .allskill ul li:active,

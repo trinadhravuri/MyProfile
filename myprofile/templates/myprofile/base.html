@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Trinadh Ravuri</title>
 </head>
+<style>
+    .intro{
+        position: relative;
+    }
+    .prof{
+        font-size: 20px;
+    }
+</style>
 <body>
     <!-- Header section start -->
     <section class="header">
@@ -21,31 +29,40 @@
                 <li><a href="">About</a></li>
                 <li><a href="{% url 'allprojects' %}">Projects</a></li>
                 <li><a href="{% url 'allskills' %}">Skills</a></li>
-                <li><a href="">Contact Me</a></li>
+                <li><a href="{% url 'enquiry' %}">Contact Me</a></li>
             </ul>
         </div>
     </section>
     <!-- Header section end -->
     <!-- trinadh Intro starts -->
-    <section class="intro section-start">
+    <section class="intro">
         <div>
             <img src="{% static 'images/webprofile.png' %}" alt="">
         </div>
         <div class="matter">
             <h2 class="hello">Hello.!</h2>
+            <h3 id="timedisplay"></h3>
             <h3>My name is</h3>
             <h1 class="name">Trinadh Ravuri</h1>
             <h4>I am</h4>
             <h2 class="prof">IT Professional</h2>
-            <a href=""><button class="btn">Call Me</button></a>
-            <a href=""><button class="btn">Email me</button></a>
-            <a href=""><button class="btn">Dounload Resume</button></a>
+            <a href="tel:+917658962143"><button class="btn">Call Me</button></a>
+            <a href="mailto:trinadh.ravz@gmail.com"><button class="btn">Email me</button></a>
+            <a href="uploads/files/TrinadhRavuri.pdf" download="TrinadhRavuri.pdf"> <button class="btn">Download Resume</button></a>
+            
         </div>
     </section>
+    <br><br><br>
     <!-- trinadh Intro ends -->
     {% block content %}
 
     {% endblock %}
+    <!-- contact starts 
+    {% block contact %}
+
+    {% endblock contact %}
+     contact endss -->
+     <br>
         <!-- trinadh footer starts -->
         {% block footer %}
 
@@ -54,4 +71,29 @@
         {% endblock %}
         <!-- trinadh footer ends -->
     </body>
+<script>
+    let time = document.getElementById('timedisplay');
+let d = new Date();
+time.innerHTML = d.toLocaleTimeString();
+const hours = d.getHours();
+time.innerHTML = hours;
+if (hours > 4 && hours< 10){
+    time.innerHTML = 'Good Morning..Have a Nice day!';
+}
+else if (hours>= 10 && hours < 12){
+    time.innerHTML = "Good day..";
+} 
+else if (hours>= 12 && hours < 17){
+    time.innerHTML = "Good Afternoon..";
+} 
+else if (hours>= 17 && hours < 21){
+    time.innerHTML = "Have a Nice Evening..";
+} 
+else if (hours>= 21 && hours < 24){
+    time.innerHTML = "Time to have a Great Sleep ..";
+} 
+else{
+    time.innerHTML = NaN;
+}
+</script>
 </html>
